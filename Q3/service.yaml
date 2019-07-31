@@ -1,0 +1,84 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-07-31T08:24:12Z
+  generateName: nginx-1-
+  labels:
+    app: nginx-1
+  name: nginx-1-6mddl
+  namespace: default
+  resourceVersion: "17151"
+  selfLink: /api/v1/namespaces/default/services/nginx-1-6mddl
+  uid: 9378c683-b36c-11e9-a4d5-42010a800181
+spec:
+  clusterIP: 10.0.30.203
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31151
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-1
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-07-31T09:33:47Z
+  generateName: nginx-1-
+  labels:
+    app: nginx-1
+  name: nginx-1-rgph4
+  namespace: default
+  resourceVersion: "29465"
+  selfLink: /api/v1/namespaces/default/services/nginx-1-rgph4
+  uid: 4c28f4cf-b376-11e9-a4d5-42010a800181
+spec:
+  clusterIP: 10.0.27.61
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-1
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2019-07-31T07:35:26Z
+  labels:
+    app: nginx-1
+  name: nginx-1-service
+  namespace: default
+  resourceVersion: "8718"
+  selfLink: /api/v1/namespaces/default/services/nginx-1-service
+  uid: c38957e9-b365-11e9-a4d5-42010a800181
+spec:
+  clusterIP: 10.0.23.201
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 32157
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-1
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.239.130.158
